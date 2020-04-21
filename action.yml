@@ -1,13 +1,27 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'xcodegen'
+description: 'Runs the `xcodegen generate` command'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  cache-path:
+    description: 'Where the cache file will be loaded from and save to. Defaults to ~/.xcodegen/cache/{SPEC_PATH_HASH}'
+    default: '~/.xcodegen/cache/{SPEC_PATH_HASH}'
+  no-env:
+    description: 'Disable environment variable expansions'
+    default: false
+  only-plists:
+    description: 'Generate only plist files'
+    default: false
+  project:
+    description: 'The path to the directory where the project should be generated. Defaults to the directory the spec is in. The filename is defined in the project spec'
+    default: '.'
+  quiet:
+    description: 'Suppress all informational and success output'
+    default: false
+  spec:
+    description: 'The path to the project spec file. Defaults to project.yml'
+    default: 'project.yml'
+  use-cache:
+    description: 'Use a cache for the xcodegen spec. This will prevent unnecessarily generating the project if nothing has changed'
+    default: false
 runs:
   using: 'node12'
   main: 'index.js'
