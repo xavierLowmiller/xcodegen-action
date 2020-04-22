@@ -5,14 +5,6 @@ const os = require('os');
 const fs = require('fs');
 
 try {
-  const cachePath = core.getInput('cache-path')
-  const noEnv = core.getInput('no-env')
-  const onlyPlists = core.getInput('only-plists')
-  const project = core.getInput('project')
-  const quiet = core.getInput('quiet')
-  const spec = core.getInput('spec')
-  const useCache = core.getInput('use-cache')
-
   main()
 } catch (error) {
   core.setFailed(error.message);
@@ -33,7 +25,52 @@ async function installXcodegen() {
   await exec.exec('xcodegen/install.sh', null, { cwd: xcodegenDir })
   await exec.exec('rm -rf', [xcodegenDir])
 }
+
+async function runXcodegen() {
+  const input = {
+    cachePath:  core.getInput('cache-path'),
+    noEnv:      core.getInput('no-env'),
+    onlyPlists: core.getInput('only-plists'),
+    project:    core.getInput('project'),
+    quiet:      core.getInput('quiet'),
+    spec:       core.getInput('spec'),
+    useCache:   core.getInput('use-cache')
+  }
+
+  let options = []
+
+  if (input.cachePath) {
+    options += ['--cache-path ' + input.cachePath]
+  }
+
+  if (input.noEnv) {
+    options += ['--no-env']
+  }
+
+  if (input.onlyPlists) {
+    options += ['--only-plists']
+  }
+
+  if (input.project) {
+    options += ['--project ' + input.project]
+  }
+
+  if (input.quiet) {
+    options += ['--quiet']
+  }
+
+  if (input.spec) {
+    options += ['--spec ' + input.spec]
+  }
+
+  if (input.useCache) {
+    options += ['--use-cache']
+  }
+
+  await exec.exec('xcodegen', options)
+}
  
 async function main() {
   await installXcodegen()
+  await runXcodegen()  
 }
