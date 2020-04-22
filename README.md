@@ -25,7 +25,7 @@ The path to the directory where the project should be generated. Defaults to the
 ## Example usage
 
 ```yaml
-uses: actions/xcodegen@master
+uses: xavierLowmiller/xcodegen-action@1.0.0
 with:
   spec: project.yaml
   quiet: true
