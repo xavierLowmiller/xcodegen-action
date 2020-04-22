@@ -14,10 +14,10 @@ async function installXcodegen() {
   const xcodegenDir = os.homedir() + '/action-xcodegen/'
   const zipFile = xcodegenDir + 'xcodegen.zip'
   await exec.exec('curl', [
+    '--silent',
     '--create-dirs',
-    '-L',
-    '-o',
-    '-s',
+    '--location',
+    '--output',
     zipFile,
     'https://github.com/yonaskolb/XcodeGen/releases/latest/download/xcodegen.zip'
   ])
