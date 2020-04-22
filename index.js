@@ -17,10 +17,11 @@ async function installXcodegen() {
     '--create-dirs',
     '-L',
     '-o',
+    '-s',
     zipFile,
     'https://github.com/yonaskolb/XcodeGen/releases/latest/download/xcodegen.zip'
   ])
-  await exec.exec('unzip', ['-o', zipFile], { cwd: xcodegenDir })
+  await exec.exec('unzip', ['-q', '-o', zipFile], { cwd: xcodegenDir })
   await exec.exec('rm', [zipFile])
   await exec.exec('xcodegen/install.sh', null, { cwd: xcodegenDir })
   await exec.exec('rm -rf', [xcodegenDir])
