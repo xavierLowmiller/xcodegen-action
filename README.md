@@ -21,6 +21,10 @@ The path to the directory where the project should be generated. Defaults to the
 * `use-cache`:
   Use a cache for the xcodegen spec. This will prevent unnecessarily generating the project if nothing has changed
 
+Additionally, the version of xcodegen can be specified:
+
+* `version`:
+  The version of xcodegen to be used. Check <https://github.com/yonaskolb/XcodeGen/releases> for valid options.
 
 ## Example usage
 
@@ -29,6 +33,7 @@ uses: xavierLowmiller/xcodegen-action@1.0.0
 with:
   spec: project.yaml
   quiet: true
+  version: '2.15.1'
 ```
 
 [xcodegen]: https://github.com/yonaskolb/XcodeGen

@@ -15,6 +15,9 @@ inputs:
     description: 'The path to the project spec file. Defaults to project.yml'
   use-cache:
     description: 'Use a cache for the xcodegen spec. This will prevent unnecessarily generating the project if nothing has changed'
+  version:
+    description: 'The version of xcodegen to be used. Check https://github.com/yonaskolb/XcodeGen/releases for valid options.'
+    default: latest
 runs:
   using: 'node12'
   main: 'index.js'
