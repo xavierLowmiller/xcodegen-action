@@ -7,7 +7,7 @@ A GitHub Action Wrapper for the delightful [`xcodegen`][xcodegen] CLI tool.
 These correspond to the [`xcodegen generate` options][options]
 
 * `cache-path`:
-  Where the cache file will be loaded from and save to. Defaults to ~/.xcodegen/cache/{SPEC_PATH_HASH}
+  Where the cache file will be loaded from and save to. Defaults to `~/.xcodegen/cache/{SPEC_PATH_HASH}`
 * `no-env`:
   Disable environment variable expansions
 * `only-plists`:
