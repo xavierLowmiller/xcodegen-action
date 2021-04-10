@@ -76,31 +76,34 @@ async function runXcodegen() {
   let options = []
 
   if (input.cachePath) {
-    options += ['--cache-path ' + input.cachePath]
+    options.push('--cache-path')
+    options.push(input.cachePath)
   }
 
   if (input.noEnv) {
-    options += ['--no-env']
+    options.push('--no-env')
   }
 
   if (input.onlyPlists) {
-    options += ['--only-plists']
+    options.push('--only-plists')
   }
 
   if (input.project) {
-    options += ['--project ' + input.project]
+    options.push('--project')
+    options.push(input.project)
   }
 
   if (input.quiet) {
-    options += ['--quiet']
+    options.push('--quiet')
   }
 
   if (input.spec) {
-    options += ['--spec ' + input.spec]
+    options.push('--spec')
+    options.push(input.spec)
   }
 
   if (input.useCache) {
-    options += ['--use-cache']
+    options.push('--use-cache')
   }
 
   await exec.exec('xcodegen', options)
