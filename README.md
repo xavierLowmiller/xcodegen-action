@@ -30,7 +30,7 @@ Additionally, the version of xcodegen can be specified:
 ## Example usage
 
 ```yaml
-uses: xavierLowmiller/xcodegen-action@1.0.0
+uses: xavierLowmiller/xcodegen-action@1.1.2
 with:
   spec: project.yaml
   quiet: true
