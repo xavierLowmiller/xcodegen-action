@@ -31,13 +31,14 @@ async function installXcodegen() {
 
 async function runXcodegen() {
   const input = {
-    cachePath:  core.getInput('cache-path'),
-    noEnv:      core.getInput('no-env'),
-    onlyPlists: core.getInput('only-plists'),
-    project:    core.getInput('project'),
-    quiet:      core.getInput('quiet'),
-    spec:       core.getInput('spec'),
-    useCache:   core.getInput('use-cache')
+    cachePath:   core.getInput('cache-path'),
+    noEnv:       core.getInput('no-env'),
+    onlyPlists:  core.getInput('only-plists'),
+    project:     core.getInput('project'),
+    projectRoot: core.getInput('project-root'),
+    quiet:       core.getInput('quiet'),
+    spec:        core.getInput('spec'),
+    useCache:    core.getInput('use-cache')
   }
 
   let options = []
@@ -58,6 +59,11 @@ async function runXcodegen() {
   if (input.project) {
     options.push('--project')
     options.push(input.project)
+  }
+
+  if (input.projectRoot) {
+    options.push('--project-root')
+    options.push(input.projectRoot)
   }
 
   if (input.quiet) {

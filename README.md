@@ -13,7 +13,9 @@ These correspond to the [`xcodegen generate` options][options]
 * `only-plists`:
   Generate only plist files
 * `project`:
-The path to the directory where the project should be generated. Defaults to the directory the spec is in. The  filename is defined in the project spec
+  The path to the directory where the project should be generated. Defaults to the directory the spec is in. The  filename is defined in the project spec
+* `project-root`:
+  The path to the project root directory. Defaults to the directory containing the project spec.
 * `quiet`:
   Suppress all informational and success output
 * `spec`:
