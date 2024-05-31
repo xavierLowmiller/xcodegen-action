@@ -25,6 +25,7 @@ async function installXcodegen() {
   ])
   await exec.exec('unzip', ['-q', '-o', zipFile], { cwd: xcodegenDir })
   await exec.exec('rm', [zipFile])
+  await exec.exec('sudo', ['chown', 'runner:admin', '/usr/local/share'])
   await exec.exec('xcodegen/install.sh', null, { cwd: xcodegenDir })
   await exec.exec('rm -rf', [xcodegenDir])
 }
