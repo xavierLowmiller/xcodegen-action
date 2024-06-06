@@ -29,6 +29,13 @@ Additionally, the version of xcodegen can be specified:
   The version of xcodegen to be used. Check <https://github.com/yonaskolb/XcodeGen/releases> for valid options.
   Omit this input or use 'latest' to use the latest version.
 
+Moreover, steps of install or run xcodegen can be specified:
+
+* `intall`:
+  Install xcodegen or not.
+* `run`:
+  Run xcodegen or not.
+
 ## Example usage
 
 ```yaml
