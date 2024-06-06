@@ -84,6 +84,16 @@ async function runXcodegen() {
 }
  
 async function main() {
-  await installXcodegen()
-  await runXcodegen()  
+  const input = {
+    install: core.getInput('install'),
+    run:     core.getInput('run'),
+  }
+
+  if (!input.install || input.install === 'true') {
+    await installXcodegen()
+  }
+
+  if (!input.run || input.run === 'true') {
+    await runXcodegen()
+  }
 }
