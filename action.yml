@@ -20,6 +20,11 @@ inputs:
   version:
     description: 'The version of xcodegen to be used. Check https://github.com/yonaskolb/XcodeGen/releases for valid options.'
     default: latest
+  install:
+    description: 'Whether to install xcodegen or not'
+  run:
+    description: 'Whether to run xcodegen or not'
+
 runs:
   using: 'node16'
   main: 'index.js'
