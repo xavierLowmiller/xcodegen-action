@@ -39,7 +39,7 @@ Moreover, steps of install or run xcodegen can be specified:
 ## Example usage
 
 ```yaml
-uses: xavierLowmiller/xcodegen-action@1.2.2
+uses: xavierLowmiller/xcodegen-action@1.2.3
 with:
   spec: project.yaml
   quiet: true
